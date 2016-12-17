@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ss_baez.petagram3.MainActivity">
+
+    <item
+        android:id="@+id/menu_likes"
+        android:title="@string/showLikes"
+        android:icon="@drawable/ic_likes"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/menu_contacto"
+        android:title="@string/menu_contacto"
+        android:orderInCategory="2"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/menu_acercade"
+        android:title="@string/menu_acerca"
+        android:orderInCategory="3"
+        app:showAsAction="never">
+
+    </item>
+
+</menu>

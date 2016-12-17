@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_likes_mascotas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ss_baez.petagram4.LikesMascotas"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/miActionBar"
+        layout="@layout/actionbar">
+    </include>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="= Favoritos ="
+        android:textColor="@color/colorAccent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:fontFamily="casual"
+        android:background="#00a39e9e"
+        android:textAllCaps="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_pets"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
+
