@@ -12,15 +12,18 @@
     <string name="showLikes">Likes</string>
     <string name="showInfo">Información</string>
     <string name="infoapp">Aplicación desarrollada por S.S. Saúl Báez, estudiante mexicano de las Lic. en Economía e Ingeniería Matemática en la Universidad Nacional
-    Autónoma de México (UNAM) y en el Instituto Politécnico Nacional (IPN) respectivamente, en CDMX, México. </string>
+    Autónoma de México (UNAM) y en el Instituto Politécnico Nacional (IPN). \nCDMX, México. </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="menu_contacto">Contacto</string>
     <string name="menu_acerca">Acerca de</string>
     <string name="hint_nombre">Nombre completo</string>
+    <string name="hint_usuario">Escribe tu usuario</string>
     <string name="hint_email">Email</string>
     <string name="hint_mensaje">Comentarios</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_configurar">Configurar Cuenta</string>
+    <string name="menuC_titulo">Petagram</string>
 </resources>

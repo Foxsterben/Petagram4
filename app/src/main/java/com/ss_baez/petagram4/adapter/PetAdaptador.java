@@ -1,6 +1,7 @@
 package com.ss_baez.petagram4.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+import com.ss_baez.petagram4.DetalleContacto;
 import com.ss_baez.petagram4.R;
 import com.ss_baez.petagram4.db.ConstructorPets;
 import com.ss_baez.petagram4.pojo.Pet;
@@ -37,7 +40,7 @@ public class PetAdaptador extends RecyclerView.Adapter<PetAdaptador.PetViewHolde
     @Override
     public PetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_pet, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_grid_pet, parent, false);
         return new PetViewHolder(v);
     }
 
@@ -49,13 +52,35 @@ public class PetAdaptador extends RecyclerView.Adapter<PetAdaptador.PetViewHolde
 
         final Pet objPet = pets.get(position);
 
-        holder.img_pet.setImageResource(objPet.getFoto());
-        holder.tv_nombrePet.setText(objPet.getNombre());
+        //holder.img_pet.setImageResource(objPet.getFoto());
 
-        holder.tv_contadorLikes.setText(String.valueOf(objPet.getLikes()));
+        Picasso.with(objActivity)
+                .load(objPet.getFoto())
+                .placeholder(R.drawable.pet3)
+                .into(holder.imgFotoCV);
 
+        //holder.tv_nombrePet.setText(objPet.getNombre());
 
-        holder.btnImg_boneLike.setOnClickListener(new View.OnClickListener() {
+        /** Aquí se va a estar "seteando" al TextView tvLikes, el valor que debe de tener en ese momento */
+        holder.tvLikes.setText(String.valueOf(objPet.getLikes()));
+
+        holder.imgFotoCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                /** Este Intent nos llevará a la actividad DetalleContacto, además envía los parámetros */
+                Intent objIntent = new Intent(objActivity, DetalleContacto.class);
+
+                objIntent.putExtra("url", objPet.getFoto()); /** Se modifica el objeto contacto para ingresar el URL */
+                objIntent.putExtra("like", objPet.getLikes());
+
+                objActivity.startActivity(objIntent);
+
+            }
+        });
+
+        /*
+        holder.btnImg_boneLike.setOnClickListener( new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -69,7 +94,7 @@ public class PetAdaptador extends RecyclerView.Adapter<PetAdaptador.PetViewHolde
                 holder.tv_contadorLikes.setText(String.valueOf(constructorPets.obtenerLikePet(objPet)));
 
             }
-        });
+        });*/
 
 
     }
@@ -88,20 +113,20 @@ public class PetAdaptador extends RecyclerView.Adapter<PetAdaptador.PetViewHolde
     public static class PetViewHolder extends RecyclerView.ViewHolder{ /** Aquí inicia la clase anidada */
 
         /** Se van a declarar todos los Views que se tienen definidos en el CardView */
-        private ImageView img_pet;
-        private TextView tv_nombrePet;
-        private ImageButton btnImg_boneLike;
-        public TextView tv_contadorLikes;
+        private ImageView imgFotoCV;
+        //private TextView tv_nombrePet;
+        //private ImageButton btnImg_boneLike;
+        public TextView tvLikes;
 
 
         /** En este método constructor es donde se van a asociar los obj de arriba con sus respectivos Views */
         public PetViewHolder(View itemView) {
             super(itemView);
 
-            img_pet             = (ImageView) itemView.findViewById(R.id.img_pet);
-            tv_nombrePet        = (TextView) itemView.findViewById(R.id.tv_nombrePet);
-            btnImg_boneLike     = (ImageButton) itemView.findViewById(R.id.btnImg_boneLike);
-            tv_contadorLikes    = (TextView) itemView.findViewById(R.id.tv_contadorLikes);
+            imgFotoCV             = (ImageView) itemView.findViewById(R.id.imgFotoCV);
+            //tv_nombrePet        = (TextView) itemView.findViewById(R.id.tv_nombrePet);
+            //btnImg_boneLike     = (ImageButton) itemView.findViewById(R.id.btnImg_boneLike);
+            tvLikes               = (TextView) itemView.findViewById(R.id.tvLikes);
         }
     }
 }

@@ -25,7 +25,13 @@
         android:title="@string/menu_acerca"
         android:orderInCategory="3"
         app:showAsAction="never">
+    </item>
 
+    <item
+        android:id="@+id/menu_configurar"
+        android:title="@string/menu_configurar"
+        android:orderInCategory="4"
+        app:showAsAction="never">
     </item>
 
 </menu>

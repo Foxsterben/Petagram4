@@ -6,14 +6,15 @@ package com.ss_baez.petagram4.pojo;
 
 public class Pet {
 
+    private String id;
     private String nombre;
-    private int foto;
+    private String foto;
     private int likes;
 
     //El ID no debe de estar presente en el constructor
-    private int id;
 
-    public Pet(String nombre, int foto, int likes){
+
+    public Pet(String nombre, String foto, int likes){
 
         this.nombre = nombre;
         this.foto = foto;
@@ -41,19 +42,19 @@ public class Pet {
         this.likes = likes;
     }
 
-    public int getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(int foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

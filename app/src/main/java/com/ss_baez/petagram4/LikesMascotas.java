@@ -51,11 +51,11 @@ public class LikesMascotas extends AppCompatActivity {
     public void inicializarListaPets(){
         pets = new ArrayList<Pet>();
 
-        pets.add(new Pet("Paco", R.drawable.pet5, 3));
+       /* pets.add(new Pet("Paco", R.drawable.pet5, 3));
         pets.add(new Pet("René", R.drawable.pet4, 10));
         pets.add(new Pet("Chaks", R.drawable.pet2, 5));
         pets.add(new Pet("Vektor", R.drawable.pet3, 4));
-        pets.add(new Pet("Toby", R.drawable.pet1, 4));
+        pets.add(new Pet("Toby", R.drawable.pet1, 4));*/
     }
 }
 

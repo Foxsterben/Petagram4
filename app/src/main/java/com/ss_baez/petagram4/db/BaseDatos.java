@@ -78,11 +78,11 @@ public class BaseDatos extends SQLiteOpenHelper {
             Pet petActual = new Pet(); //El segundo Pet debe crear un constructor en el POO Pet
 
             /** Aquí se va a construir el objeto que se va almacenar en la lista "pets" */
-            petActual.setId(registros.getInt(0));
+            /*petActual.setId(registros.getInt(0));
             petActual.setNombre(registros.getString(1));
             petActual.setFoto(registros.getInt(2));
 
-            /** Traeme la suma del campo NUMERO_LIKES de la tabla LIKES_PET donde el id (ID_PET) coincida con el id que estoy trayendo del oBj petActual y guardala en queryLikes*/
+             Traeme la suma del campo NUMERO_LIKES de la tabla LIKES_PET donde el id (ID_PET) coincida con el id que estoy trayendo del oBj petActual y guardala en queryLikes
             String queryLikes = "SELECT COUNT(" + ConstantesBaseDatos.TABLE_LIKES_PET_NUMERO_LIKES + ") as likes " +
                                 " FROM " + ConstantesBaseDatos.TABLE_LIKES_PET +
                                 " WHERE " + ConstantesBaseDatos.TABLE_LIKES_ID_PET + "=" + petActual.getId();
@@ -100,6 +100,8 @@ public class BaseDatos extends SQLiteOpenHelper {
             }
 
             pets.add(petActual);
+
+            */
 
         }
 

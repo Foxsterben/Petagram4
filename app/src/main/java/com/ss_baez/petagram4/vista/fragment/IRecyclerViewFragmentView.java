@@ -13,6 +13,8 @@ public interface IRecyclerViewFragmentView {
 
     public void generarLinearLayoutVertical();
 
+    public void generarGridLayout();
+
     public PetAdaptador crearAdaptador(ArrayList<Pet> pets);
 
     public void inicializarAdaptadorRV(PetAdaptador adaptador);

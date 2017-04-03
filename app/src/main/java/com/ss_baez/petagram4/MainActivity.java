@@ -81,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent objIntent3 = new Intent(MainActivity.this, AboutActivity.class);
                 startActivity(objIntent3);
                 break;
+
+            case R.id.menu_configurar:
+                Toast.makeText(this, "Configurar Cuenta", Toast.LENGTH_SHORT).show();
+                Intent objIntent4 = new Intent(MainActivity.this, ConfigurarCuentaActivity.class);
+                startActivity(objIntent4);
         }
 
         return super.onOptionsItemSelected(item);
